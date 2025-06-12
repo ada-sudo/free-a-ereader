@@ -1,0 +1,76 @@
+/* Global Reset & Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Franklin+Gothic+Medium&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Libre Baskerville', serif;
+  background-color: #1e3a8a; /* Blue background */
+  color: #ffffff; /* White text */
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Layout */
+.layout {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  background-color: #1e40af;
+  padding: 2rem;
+  width: 240px;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 1rem;
+}
+
+.sidebar nav ul li a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.sidebar nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+}

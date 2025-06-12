@@ -1,0 +1,31 @@
+---
+const { title } = Astro.props;
+import '../styles/global.css';
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{title}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="layout">
+  <aside class="sidebar">
+    <h1 class="sidebar-title">📖 Free-A-Reader</h1>
+    <nav>
+      <ul>
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/kindle">Kindle</a></li>
+        <li><a href="/kobo">Kobo</a></li>
+        <li><a href="/pocketbook">PocketBook</a></li>
+        <li><a href="/history">History</a></li>
+        <li><a href="/legal-netherlands">Legal (NL)</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <slot />
+  </main>
+</body>
+</html>

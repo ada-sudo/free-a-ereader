@@ -1,11 +1,70 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import SidebarLayout from '../layouts/SidebarLayout.astro';
+const title = "Welcome to Your E-Reader Jailbreak Hub";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<SidebarLayout title={title}>
+  <section class="prose prose-lg max-w-none">
+    <h1>Unlock the True Potential of Your E-Reader</h1>
+
+    <p>
+      E-readers are wonderful devices that revolutionized how we read digital books. But manufacturers often limit their capabilities with locked-down software. Jailbreaking your e-reader means removing these restrictions to gain full control — allowing you to install custom apps, tweak features, and personalize your device beyond factory defaults.
+    </p>
+
+    <h2>The Philosophy Behind Jailbreaking</h2>
+    <p>
+      At its core, jailbreaking is about freedom and ownership. You bought your device, so you should be able to use it however you want. It empowers users to:
+    </p>
+    <ul>
+      <li>Extend functionality with community-built apps</li>
+      <li>Bypass limitations and add missing features</li>
+      <li>Experiment with open-source software like KOReader</li>
+      <li>Protect your privacy and data better</li>
+    </ul>
+
+    <h2>Why Jailbreak Your E-Reader?</h2>
+    <p>
+      Popular jailbreaking benefits include installing advanced reading apps, customizing fonts and UI, accessing unsupported file formats, and unlocking hardware features. It breathes new life into older devices and often leads to a much richer reading experience.
+    </p>
+
+    <h2>Risks and Considerations</h2>
+    <ul>
+      <li>Void your device warranty</li>
+      <li>Potentially brick your device if instructions are not carefully followed</li>
+      <li>Cause software instability or incompatibilities</li>
+      <li>Lead to loss of official support or updates</li>
+    </ul>
+    <p>
+      Always back up your data, carefully read instructions, and proceed with caution.
+    </p>
+
+    <h2>Supported Devices & Guides</h2>
+    <ul>
+      <li><a href="/kindle">Amazon Kindle</a></li>
+      <li><a href="/kobo">Kobo</a></li>
+      <li><a href="/pocketbook">PocketBook</a></li>
+    </ul>
+
+    <h2>Community and Resources</h2>
+    <ul>
+      <li><a href="https://www.mobileread.com/forums/" target="_blank" rel="noopener">MobileRead Forums</a></li>
+      <li>
+        Reddit:
+        <a href="https://www.reddit.com/r/kindle/" target="_blank" rel="noopener">r/kindle</a> |
+        <a href="https://www.reddit.com/r/kobo/" target="_blank" rel="noopener">r/kobo</a>
+      </li>
+      <li><a href="https://discord.gg/0WkNGCjnvQJ5XeLB" target="_blank" rel="noopener">E-Reader Discord Servers</a></li>
+    </ul>
+
+    <h2>Learn the History</h2>
+    <p>
+      Curious about how e-reader jailbreaking evolved over time?
+      <a href="/history">Check out our history of jailbreaking</a> page for the full story.
+    </p>
+
+    <p class="text-sm italic mt-8">
+      Disclaimer: Jailbreaking can void warranties and cause issues. Always proceed carefully and back up your data.
+      See our <a href="/legal-netherlands">Legal Information (NL)</a> for more.
+    </p>
+  </section>
+</SidebarLayout>
