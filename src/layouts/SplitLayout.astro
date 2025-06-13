@@ -1,0 +1,67 @@
+---
+const { title } = Astro.props;
+import '../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+  </head>
+  <body>
+    <!-- Hamburger menu button for mobile -->
+    <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="left-menu">
+      ☰
+    </button>
+
+    <div id="left-gradient"></div>
+    <div id="right-gradient"></div>
+
+    <!-- Split screen layout -->
+    <div class="left-half" id="left-menu" role="navigation" aria-label="Main menu">
+      <nav>
+        <a class="chapter" href="/"><span>Welcome</span></a>
+        <a class="chapter" href="/kindle"><span>Kindle Jailbreak</span></a>
+        <a class="chapter" href="/kobo"><span>Kobo Jailbreak</span></a>
+        <a class="chapter" href="/pocketbook"><span>PocketBook Jailbreak</span></a>
+        <a class="chapter" href="/resources"><span>Community &amp; Resources</span></a>
+        <a class="chapter" href="/legal-netherlands"><span>Legal Info (EU &amp; Netherlands)</span></a>
+      </nav>
+    </div>
+
+    <div id="right-half">
+      <slot />
+      <div class="dog-ear"></div>
+    </div>
+
+    <!-- Visual Borders -->
+    <div id="top"></div>
+    <div id="bottom"></div>
+    <div id="left"></div>
+    <div id="right"></div>
+    <div id="middle"></div>
+
+    <!-- Mobile bottom navigation (optional if you want to keep it) -->
+    <div class="bottom-nav" role="navigation" aria-label="Mobile navigation">
+      <a href="/"><span>Welcome</span></a>
+      <a href="/kindle"><span>Kindle Jailbreak</span></a>
+      <a href="/kobo"><span>Kobo Jailbreak</span></a>
+      <a href="/pocketbook"><span>PocketBook Jailbreak</span></a>
+      <a href="/resources"><span>Community & Resources</span></a>
+      <a href="/legal-netherlands"><span>Legal Info</span></a>
+    </div>
+
+    <script>
+      const menuToggle = document.getElementById('menu-toggle');
+      const leftMenu = document.getElementById('left-menu');
+
+      menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+        menuToggle.setAttribute('aria-expanded', !expanded);
+        leftMenu.classList.toggle('open');
+      });
+    </script>
+  </body>
+</html>

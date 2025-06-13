@@ -1,105 +1,311 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Franklin+Gothic+Medium&display=swap');
 
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::selection {
+  background-color: #ffcc00; /* Your highlight color */
+  color: #000000;            /* Optional: text color on highlight */
+}
+body {
+  display: flex;
+  height: 100vh;
+  font-family: 'Franklin Gothic Medium', sans-serif;
+  background-color: #f3f3eb;
+  color: black;
+  overflow: hidden;
+}
+
+/* Hamburger menu button - hidden on desktop, styled like nav links */
+#menu-toggle,
+.menu-toggle {
+  display: none; /* hidden on desktop */
+  cursor: pointer;
+  color: black;
+  font-size: 1.25rem;
+  border: 1px solid black;
+  border-radius: 35px;
+  padding: 0.5rem 1.5rem;
+  background: #f3f3eb;
   font-family: 'Libre Baskerville', serif;
-  background-color: #1e3a8a;
-  color: #ffffff;
+  user-select: none;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+#menu-toggle:hover,
+.menu-toggle:hover {
+  background-color: #ffda006b;
+}
+
+.bottom-nav {
+  display: none;
+}
+
+.left-half {
+  width: 50%;
+  background-color: #f3f3eb;
+  padding: 4rem 2rem;
+  border: 1rem solid #e9e9db;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  position: relative;
+  gap: 1.5rem;
 }
-
-/* Page title (top left) */
-.page-title {
-  font-size: 1.75rem;
-  font-weight: bold;
-  margin: 1rem 1rem 0 1rem;
-  border: none;
+.left-half,
+.left-half * {
+  cursor: url('/public/cursor.cur'), auto;
 }
-
-/* Two-column main content */
-.main-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Sidebar at bottom (styled as footer) */
-.bottom-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.left-half nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 2px solid white;
-  padding: 0.75rem 1.5rem;
-  background: none;
-  font-family: 'Franklin Gothic Medium', sans-serif;
-  font-size: 1.5rem;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.left-half a {
+  color: black;
+  font-size: 2rem;
+  text-decoration: none;
+  font-family: 'Libre Baskerville', serif;
+  border: 1px solid black;
+  padding: 1rem 1rem 1rem 2rem;
+  border-radius: 55px;
+  position: relative;
+  overflow: hidden;
+}
+.left-half a span {
+  position: relative;
   z-index: 1;
+  display: inline-block;
+  transition: opacity 0.2s ease;
+  font-family: 'Libre Baskerville', serif;
+  image-rendering: pixelated;
+  letter-spacing: 0.02em;
+}
+/* Grainy noise overlay */
+.left-half a::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  opacity: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" stitchTiles="stitch"/></filter><rect width="8" height="8" filter="url(%23noise)" /></svg>');
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  animation: grainy-flicker 1.2s infinite;
+  z-index: 2;
+  border-radius: 55px;
+}
+/* Show grain overlay on hover */
+.left-half a:hover::after {
+  opacity: 0.15;
+  animation-play-state: running;
+}
+/* Flicker opacity on text */
+.left-half a:hover span {
+  animation: eink-opacity-flicker 1.2s ease-in-out;
+}
+/* Flicker opacity keyframes */
+@keyframes eink-opacity-flicker {
+  0%, 100% {opacity: 1;}
+  20% {opacity: 0.3;}
+  40% {opacity: 0.6;}
+  60% {opacity: 0.4;}
+  80% {opacity: 0.85;}
+}
+/* Grain overlay flicker animation */
+@keyframes grainy-flicker {
+  0%, 100% {background-position: 0 0;}
+  50% {background-position: 5px 5px;}
+}
+#right-half {
+  position: relative;
+  width: 50%;
+  padding: 5rem 4rem 5rem; /* bottom padding reduced, will add more on mobile */
+  overflow-y: auto;
+  font-size: 1rem;
+  line-height: 1.8;
+  border: 1rem solid #e9e9db;
+  text-decoration: none;
+}
+/* Dog-ear corner fixed inside right-half */
+.dog-ear {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 40px 0 0 40px;
+  border-color: #f3f3eb transparent transparent #aaaa98;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  box-shadow: -1px 2px 0 0 #e9e9db;
+  pointer-events: none;
+  z-index: 20;
+  background: none;
+}
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Libre Baskerville', serif;
 }
 
-/* Centered logo image */
+h3 {
+  margin-block-start: 2rem;
+}
+.chapter-text p {
+  margin-bottom: 1.5rem;
+}
 .bar-logo {
   position: fixed;
-  bottom: 3rem; /* Fixed distance from bottom of viewport */
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   height: 5rem;
   z-index: 10;
 }
-
-/* Details/Summary clean-up */
-summary {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+/* Borders */
+#top, #bottom, #left, #right, #middle {
+  position: fixed;
+  background-color: #ffffff30;
+  z-index: 5;
 }
-
-details {
-  margin-bottom: 1.5rem;
+#top, #bottom {
+  left: 0;
+  right: 0;
+  height: 2px;
 }
-
-/* Links */
-a {
-  color: #cbd5e1;
-  text-decoration: none;
+#top {
+  top: 0;
 }
-
-a:hover {
+#bottom {
+  bottom: 0;
+}
+#left, #right {
+  top: 0;
+  bottom: 0;
+  width: 2px;
+}
+#left {
+  left: 0;
+}
+#right {
+  right: 0;
+}
+#middle {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-1px);
+}
+/* External links */
+a[href^="http://"],
+a[href^="https://"] {
+  color: black !important;
+  text-decoration: none; /* remove underline */
+  background-color: #ffda006b; /* bright yellow highlight */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 3px; /* small horizontal padding to look like highlight */
+}
+a[href^="http://"]:hover,
+a[href^="https://"]:hover {
+  cursor: pointer; /* pointer on hover */
+  background-color: #fff100; /* slightly brighter yellow on hover */
+  color: black !important;
   text-decoration: underline;
 }
-
-p, li {
-  line-height: 1.6;
+/* Responsive */
+/* Desktop and tablet */
+@media (max-width: 1024px) {
+  #right-half {
+    padding: 3rem 2rem;
+  }
 }
-
-/* Responsive adjustments */
+/* Mobile */
 @media (max-width: 768px) {
-  .main-content {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
-  .bottom-bar {
+  body {
     flex-direction: column;
-    font-size: 1.2rem;
-    text-align: center;
-    padding: 1rem;
   }
 
-  .bar-logo {
-    height: 4rem;
+  /* Show toggle button at bottom center */
+  #menu-toggle {
+    display: inline-flex;
+    position: fixed;
+    bottom: 3.75rem; /* above bottom nav */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 101;
+  }
+
+  /* Adjust left nav to slide in */
+  .left-half {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70vw;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #f3f3eb;
+    padding: 2rem 1.5rem;
+    border-right: 1rem solid #e9e9db;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 100;
+    overflow-y: auto;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  .left-half.open {
+    transform: translateX(0);
+  }
+
+  /* Right half full width and padding for bottom nav */
+  #right-half {
+    width: 100%;
+    padding: 3rem 1.5rem 7rem; /* add bottom padding for nav & toggle */
+    border: none;
+    font-size: 1rem;
+  }
+
+  /* Dog ear visible on mobile */
+  .dog-ear {
+    display: block;
+  }
+
+  /* Bottom nav visible at bottom */
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f3f3eb;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    font-family: 'Libre Baskerville', serif;
+    z-index: 100;
+    gap: 0.5rem;
+    overflow-x: auto;
+  }
+
+  /* Nav links smaller font and fit better */
+  .bottom-nav a {
+    color: black;
+    font-size: 0.85rem;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 0.4rem 0.8rem;
+    border-radius: 35px;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+  }
+  .bottom-nav a:hover {
+    background-color: #ffda006b;
   }
 }

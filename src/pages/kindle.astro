@@ -1,18 +1,48 @@
 ---
-import SidebarLayout from '../layouts/SidebarLayout.astro';
-const title = "Amazon Kindle Jailbreak Guide";
+import SplitLayout from '../layouts/SplitLayout.astro';
+const title = "Kindle Jailbreak Guide";
 ---
 
-<SidebarLayout title={title}>
-  <section class="prose prose-lg max-w-none">
-    <h1>Amazon Kindle Jailbreak Guide</h1>
-    <p>
-      This page contains instructions and resources for jailbreaking Amazon Kindle devices. Learn how to unlock your Kindle to install custom apps like KOReader, remove ads, and extend functionality.
-    </p>
-    <ul>
-      <li><a href="https://wiki.mobileread.com/wiki/Kindle_Hacks" target="_blank" rel="noopener">MobileRead Kindle Hacks</a></li>
-      <li><a href="https://github.com/koreader/koreader" target="_blank" rel="noopener">KOReader on GitHub</a></li>
-      <li><a href="/kindle/firmware" >Kindle Firmware Info</a></li>
-    </ul>
-  </section>
-</SidebarLayout>
+<SplitLayout title={title}>
+  <h2>Kindle Jailbreak Guide</h2>
+  <p>The Amazon Kindle is one of the most popular e-readers worldwide, but it has limitations like restricted file formats, no third-party apps, and limited customization.</p>
+
+  <h3>Supported Kindle Models</h3>
+  <ul>
+    <li>Kindle Paperwhite (1st to latest generation)</li>
+    <li>Kindle Oasis (all versions)</li>
+    <li>Kindle Basic (various models)</li>
+  </ul>
+
+  <h3>Why Jailbreak Your Kindle?</h3>
+  <ul>
+    <li>Install custom reading apps such as KOReader for advanced features</li>
+    <li>Customize fonts, margins, and UI themes beyond Amazon’s defaults</li>
+    <li>Read unsupported e-book formats (ePub, etc.)</li>
+    <li>Access enhanced annotations and note-taking features</li>
+  </ul>
+
+  <h3>Step-by-Step Jailbreak Process</h3>
+  <ol>
+    <li><strong>Check your Kindle firmware:</strong> Go to Settings &gt; Device Info and note the firmware version.</li>
+    <li><strong>Find the correct jailbreak tool:</strong> Each firmware may require a specific jailbreak method. Popular tools are “Kindle Jailbreak” scripts maintained by the community.</li>
+    <li><strong>Download the jailbreak files:</strong> Use trusted sources like MobileRead forums.</li>
+    <li><strong>Connect your Kindle to your PC:</strong> via USB cable and transfer jailbreak files.</li>
+    <li><strong>Run the jailbreak script:</strong> Follow exact instructions for your model and firmware.</li>
+    <li><strong>Install KOReader:</strong> After jailbreaking, KOReader can be installed to enhance your reading experience.</li>
+  </ol>
+
+  <h3>Safety Tips</h3>
+  <ul>
+    <li>Backup all important files and settings before proceeding</li>
+    <li>Do not interrupt the process or disconnect during the jailbreak</li>
+    <li>Use verified, community-trusted tools only</li>
+    <li>Be aware that firmware updates from Amazon may undo your jailbreak</li>
+  </ul>
+
+  <h3>Further Resources</h3>
+  <ul>
+    <li><a href="https://www.mobileread.com/forums/forumdisplay.php?f=142" target="_blank" rel="noopener">MobileRead Kindle Jailbreak Forum</a></li>
+    <li><a href="https://www.youtube.com/playlist?list=PLkindleyouneed" target="_blank" rel="noopener">YouTube Tutorials</a></li>
+  </ul>
+</SplitLayout>

@@ -1,18 +1,47 @@
 ---
-import SidebarLayout from '../layouts/SidebarLayout.astro';
+import SplitLayout from '../layouts/SplitLayout.astro';
 const title = "Kobo Jailbreak Guide";
 ---
 
-<SidebarLayout title={title}>
-  <section class="prose prose-lg max-w-none">
-    <h1>Kobo Jailbreak Guide</h1>
-    <p>
-      Step-by-step guides and resources to jailbreak Kobo e-readers, enabling you to install custom reading software and tweak your device beyond stock limitations.
-    </p>
-    <ul>
-      <li><a href="https://wiki.mobileread.com/wiki/Kobo_Hacks" target="_blank" rel="noopener">MobileRead Kobo Hacks</a></li>
-      <li><a href="https://github.com/koreader/koreader" target="_blank" rel="noopener">KOReader on GitHub</a></li>
-      <li><a href="/kobo/firmware">Kobo Firmware Info</a></li>
-    </ul>
-  </section>
-</SidebarLayout>
+<SplitLayout title={title}>
+  <h2>Kobo Jailbreak Guide</h2>
+  <p>Kobo e-readers offer a great reading experience but also come with some restrictions that jailbreaking can remove, unlocking more features and customization.</p>
+
+  <h3>Supported Kobo Models</h3>
+  <ul>
+    <li>Kobo Clara HD</li>
+    <li>Kobo Libra H2O</li>
+    <li>Kobo Forma</li>
+    <li>Other recent models</li>
+  </ul>
+
+  <h3>Why Jailbreak Kobo?</h3>
+  <ul>
+    <li>Install KOReader and other third-party apps</li>
+    <li>Customize UI elements, fonts, and display settings</li>
+    <li>Unlock support for extra file formats</li>
+    <li>Improve annotation tools and page-turning options</li>
+  </ul>
+
+  <h3>How to Jailbreak Your Kobo</h3>
+  <ol>
+    <li><strong>Check your Kobo firmware:</strong> Go to Settings &gt; Device Information.</li>
+    <li><strong>Download the jailbreak package:</strong> Trusted sites like MobileRead provide instructions and files.</li>
+    <li><strong>Connect your device to PC:</strong> Use USB and copy jailbreak files to the root directory.</li>
+    <li><strong>Restart your Kobo:</strong> The jailbreak will automatically install on boot.</li>
+    <li><strong>Install KOReader:</strong> Usually comes pre-packaged or can be installed after jailbreak.</li>
+  </ol>
+
+  <h3>Important Precautions</h3>
+  <ul>
+    <li>Backup important books and notes</li>
+    <li>Use only verified jailbreak files</li>
+    <li>Follow instructions carefully to avoid bricking</li>
+  </ul>
+
+  <h3>Helpful Links</h3>
+  <ul>
+    <li><a href="https://www.mobileread.com/forums/forumdisplay.php?f=145" target="_blank" rel="noopener">MobileRead Kobo Jailbreak Forum</a></li>
+    <li><a href="https://www.reddit.com/r/kobo/" target="_blank" rel="noopener">Reddit r/kobo</a></li>
+  </ul>
+</SplitLayout>

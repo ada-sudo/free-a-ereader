@@ -1,50 +1,33 @@
 ---
-import SidebarLayout from '../layouts/SidebarLayout.astro';
+import SplitLayout from '../layouts/SplitLayout.astro';
 const title = "Welcome to Your E-Reader Jailbreak Hub";
 ---
 
-<SidebarLayout title={title}>
-  <details open>
-    <summary>Unlock the True Potential of Your E-Reader</summary>
-    <p>E-readers are wonderful devices... Jailbreaking removes restrictions and lets you personalize deeply.</p>
-  </details>
+<SplitLayout title={title}>
+  <div class="pre-title-space"></div>
 
-  <details>
-    <summary>The Philosophy Behind Jailbreaking</summary>
-    <p>At its core, jailbreaking is about freedom and ownership...</p>
-  </details>
+  <div class="chapter-text">
+    <h2>Welcome</h2>
+    <p>E-readers are fantastic devices designed to make reading comfortable and distraction-free. However, most e-readers come with software restrictions that limit customization and advanced features.</p>
 
-  <details>
-    <summary>Why Jailbreak Your E-Reader?</summary>
+    <p>This site is dedicated to helping you unlock your e-reader’s full potential safely and responsibly through jailbreaking.</p>
+
+    <h3>What You’ll Learn:</h3>
     <ul>
-      <li>Install advanced reading apps</li>
-      <li>Customize UI and fonts</li>
-      <li>Access unsupported file formats</li>
+      <li>How to jailbreak popular e-readers like Kindle, Kobo, and PocketBook</li>
+      <li>Installing advanced reading apps like KOReader for enhanced reading experience</li>
+      <li>Customizing fonts, margins, layouts, and other display options</li>
+      <li>Accessing a wider range of e-book formats and features</li>
     </ul>
-  </details>
 
-  <details>
-    <summary>Risks and Considerations</summary>
+    <h3>What to Know First:</h3>
     <ul>
-      <li>May void warranty</li>
-      <li>Can brick device if instructions aren't followed</li>
+      <li>Jailbreaking may void your warranty and carries some risks</li>
+      <li>Our step-by-step guides minimize risks and simplify the process</li>
+      <li>This project is for curious, careful readers who want more control</li>
+      <li>Always back up your data before attempting a jailbreak</li>
     </ul>
-  </details>
 
-  <details>
-    <summary>Supported Devices</summary>
-    <ul>
-      <li><a href="/kindle">Kindle</a></li>
-      <li><a href="/kobo">Kobo</a></li>
-      <li><a href="/pocketbook">PocketBook</a></li>
-    </ul>
-  </details>
-
-  <details>
-    <summary>Community and Resources</summary>
-    <ul>
-      <li><a href="https://www.mobileread.com/forums/">MobileRead</a></li>
-      <li>Reddit: <a href="https://www.reddit.com/r/kindle/">r/kindle</a> | <a href="https://www.reddit.com/r/kobo/">r/kobo</a></li>
-    </ul>
-  </details>
-</SidebarLayout>
+    <p>Start exploring by selecting a topic from the navigation on the left.</p>
+  </div>
+</SplitLayout>

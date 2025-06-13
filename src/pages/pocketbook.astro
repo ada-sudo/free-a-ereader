@@ -1,17 +1,45 @@
 ---
-import SidebarLayout from '../layouts/SidebarLayout.astro';
+import SplitLayout from '../layouts/SplitLayout.astro';
 const title = "PocketBook Jailbreak Guide";
 ---
 
-<SidebarLayout title={title}>
-  <section class="prose prose-lg max-w-none">
-    <h1>PocketBook Jailbreak Guide</h1>
-    <p>
-      Discover how to jailbreak PocketBook e-readers to unlock advanced features and install community-developed apps.
-    </p>
-    <ul>
-      <li><a href="https://wiki.mobileread.com/wiki/PocketBook_Hacks" target="_blank" rel="noopener">MobileRead PocketBook Hacks</a></li>
-      <li><a href="/pocketbook/firmware">PocketBook Firmware Info</a></li>
-    </ul>
-  </section>
-</SidebarLayout>
+<SplitLayout title={title}>
+  <h2>PocketBook Jailbreak Guide</h2>
+  <p>PocketBook devices are less common but popular among e-reader enthusiasts. Jailbreaking them can open up new features and allow installation of third-party apps.</p>
+
+  <h3>Supported PocketBook Models</h3>
+  <ul>
+    <li>PocketBook InkPad</li>
+    <li>PocketBook Touch HD</li>
+    <li>Other PocketBook models – check compatibility</li>
+  </ul>
+
+  <h3>Benefits of Jailbreaking PocketBook</h3>
+  <ul>
+    <li>Install KOReader and other alternative reading apps</li>
+    <li>Customize fonts, margins, and UI</li>
+    <li>Access additional file formats</li>
+    <li>Enhanced annotation and navigation features</li>
+  </ul>
+
+  <h3>Jailbreaking Steps</h3>
+  <ol>
+    <li><strong>Identify your device and firmware version.</strong></li>
+    <li><strong>Download jailbreak tools:</strong> Use community forums like MobileRead for latest files.</li>
+    <li><strong>Transfer jailbreak files:</strong> Connect your device via USB and copy files to root.</li>
+    <li><strong>Restart and wait:</strong> The jailbreak installs automatically on boot.</li>
+    <li><strong>Install KOReader or other apps:</strong> Usually straightforward after jailbreak.</li>
+  </ol>
+
+  <h3>Safety & Recommendations</h3>
+  <ul>
+    <li>Backup all data before starting</li>
+    <li>Only use trusted jailbreak tools</li>
+    <li>Consult PocketBook community forums for help</li>
+  </ul>
+
+  <h3>Resources</h3>
+  <ul>
+    <li><a href="https://www.mobileread.com/forums/forumdisplay.php?f=147" target="_blank" rel="noopener">MobileRead PocketBook Forum</a></li>
+  </ul>
+</SplitLayout>
