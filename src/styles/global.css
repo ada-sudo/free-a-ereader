@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Franklin+Gothic+Medium&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   margin: 0;
@@ -13,7 +13,7 @@
 body {
   display: flex;
   height: 100vh;
-  font-family: 'Franklin Gothic Medium', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   background-color: #f3f3eb;
   color: black;
   overflow: hidden;
@@ -221,6 +221,9 @@ a[href^="https://"]:hover {
   #right-half {
     padding: 3rem 2rem;
   }
+  #right-half img {
+    max-width: 100%;
+  }
 }
 /* Mobile */
 @media (max-width: 768px) {
@@ -309,4 +312,34 @@ a[href^="https://"]:hover {
   .bottom-nav a:hover {
     background-color: #ffda006b;
   }
+
+  /* Mobile image adjustments */
+  #right-half img {
+    float: none;
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ====== New styles for images inside #right-half ====== */
+#right-half img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  margin-left: 2rem;
+  border: none; /* removed white line border */
+  border-radius: 0.75rem;
+  object-fit: contain;
+  float: right;
+  shape-outside: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Clear float on paragraphs, lists immediately after images */
+#right-half img + p,
+#right-half img + ul,
+#right-half img + ol {
+  clear: right;
 }
