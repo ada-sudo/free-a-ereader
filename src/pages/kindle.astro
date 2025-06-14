@@ -5,54 +5,152 @@ const title = "Kindle Jailbreak Guide";
 
 <SplitLayout title={title}>
   <h2>Kindle Jailbreak Guide</h2>
-  <p>The Amazon Kindle is one of the most popular e-readers worldwide, but it has limitations like restricted file formats, no third-party apps, and limited customization.</p>
+  <p>The Amazon Kindle is one of the most popular eReaders worldwide but comes with restrictions such as limited file formats, no third-party apps, and minimal customization options.</p>
 
   <h3>Supported Kindle Models</h3>
   <ul>
-    <li>Kindle Paperwhite (1st to latest generation)</li>
+    <li>Kindle Paperwhite (all generations)</li>
     <li>Kindle Oasis (all versions)</li>
     <li>Kindle Basic (various models)</li>
   </ul>
+  <p><strong>Note:</strong> Some newer Kindles, such as the Kindle Paperwhite 5th generation (2018) and above, or Kindle Oasis 3rd generation and later, may not be jailbreakable due to hardware and firmware changes. Always check compatibility before proceeding.</p>
 
   <h3>Why Jailbreak Your Kindle?</h3>
   <ul>
-    <li>Install custom reading apps such as KOReader for advanced features</li>
-    <li>Customize fonts, margins, and UI themes beyond Amazon’s defaults</li>
-    <li>Read unsupported e-book formats (ePub, etc.)</li>
-    <li>Access enhanced annotations and note-taking features</li>
+    <li>Install custom reading apps like KOReader for advanced features</li>
+    <li>Customize fonts, margins, and themes beyond Amazon’s defaults</li>
+    <li>Read unsupported eBook formats such as EPUB</li>
+    <li>Use enhanced annotation and note-taking tools</li>
   </ul>
 
-  <h3>Step-by-Step Jailbreak Process</h3>
+  <h3>Step-by-Step Jailbreak Instructions</h3>
+
   <ol>
-    <li><strong>Check your Kindle firmware:</strong> Go to <em>Settings &gt; Device Info</em> and note the firmware version exactly (e.g., 5.13.7).</li>
-    <li><strong>Download the jailbreak file:</strong> Visit the official community repo to find the correct jailbreak for your firmware version:
-      <br />
-      <a href="https://github.com/geek1011/kindle-jailbreak" target="_blank" rel="noopener noreferrer">https://github.com/geek1011/kindle-jailbreak</a>
-      <br />Download the <code>jailbreak.bin</code> file matching your Kindle firmware.
+    <li><strong>Check Your Kindle Firmware Version</strong><br />
+      On your Kindle, go to <em>Settings &gt; Device Info</em> and note the firmware version exactly (e.g., 5.13.7).
     </li>
-    <li><strong>Connect your Kindle to your PC:</strong> Use a USB cable to connect. Your Kindle should appear as a USB drive.</li>
-    <li><strong>Copy the jailbreak file:</strong> Place the <code>jailbreak.bin</code> file in the root directory of your Kindle (do not put it inside any folder).</li>
-    <li><strong>Eject and disconnect your Kindle:</strong> Safely eject the device from your computer and unplug the USB cable.</li>
-    <li><strong>Start the jailbreak:</strong> On your Kindle, go to <em>Settings &gt; Device Options &gt; Advanced Options</em> and select <em>Update Your Kindle</em>. Confirm when prompted.</li>
-    <li><strong>Wait for the process to complete:</strong> Your Kindle will reboot and apply the jailbreak automatically. Do not turn it off or unplug during this.</li>
-    <li><strong>Verify the jailbreak:</strong> Look for the new “Enable Jb” app on your Home screen. Open it and follow any final instructions.</li>
-    <li><strong>Install KOReader (optional):</strong> For enhanced reading features, install KOReader from its official source:
-      <br />
-      <a href="https://github.com/koreader/koreader" target="_blank" rel="noopener noreferrer">https://github.com/koreader/koreader</a>
+
+    <li><strong>IMPORTANT: Put Your Kindle in Airplane Mode</strong><br />
+      This prevents unwanted network activity during the jailbreak.
+    </li>
+
+    <li><strong>Connect Your Kindle to a Computer</strong><br />
+      Use a USB cable. Your Kindle should appear as a removable drive.
+    </li>
+
+    <li><strong>Download the Jailbreak Package</strong><br />
+      Visit this Kindle Modding Wiki to download the right file for your Kindle (Careful: the rest of the wiki is a bit outdated).<br />
+      <a href="https://kindlemodding.org/jailbreaking/kindle-models" target="_blank" rel="noopener noreferrer">Jailbreak Package Selector</a><br />
+      Most likely, you will need a file called WinterBreak. It is also available here:  <a href="https://github.com/KindleModding/WinterBreak" target="_blank" rel="noopener noreferrer">Directly to Winterbreak</a><br />
+      If downloading from the Github link: click on Releases and download the <code>.tar.gz</code> file that matches your firmware version.<br />
+      <img src="/path/to/placeholder-github-releases.png" alt="GitHub releases page with download highlighted" />
+    </li>
+
+    <li><strong>Extract the Downloaded Archive</strong><br />
+      Locate the downloaded file in your downloads folder and extract it.<br />
+      You should see folders named <code>.active_content_sandbox</code> and <code>.github</code> among other files.<br />
+      <img src="/path/to/placeholder-extracted-folder.png" alt="Extracted folder contents showing hidden folders" /><br />
+      <em>Note:</em> These are hidden folders.<br />
+      - On Windows: Enable “Hidden items” in File Explorer’s View tab.<br />
+      - On Mac: Press Cmd + Shift + . in Finder.
+    </li>
+
+    <li><strong>Prepare to Copy Files</strong><br />
+      Open two file explorer windows:<br />
+      - One showing your Kindle’s root directory (the main folder).<br />
+      - One showing the extracted jailbreak folder contents.
+    </li>
+
+    <li><strong>Copy Files to Kindle</strong><br />
+      From the extracted jailbreak folder, select all files and folders except <code>readme.md</code> and the <code>.github</code> folder.<br />
+      Copy these directly into the root directory of your Kindle (do not place inside any folders).<br />
+      <img src="/path/to/placeholder-copy-files.png" alt="Example of files selected and ready to copy" />
+    </li>
+
+    <li><strong>Reboot and Launch Kindle Store</strong><br />
+      Ensure airplane mode is still ON.<br />
+      Restart your Kindle by holding the power button and selecting “Restart”.<br />
+      After reboot, open the Kindle Store by pressing the cart button or opening any book.<br />
+      A popup will appear asking to disable airplane mode. Click “Yes”.<br />
+      <img src="/path/to/placeholder-popup-airplane-mode.png" alt="Popup asking to turn off airplane mode" />
+    </li>
+
+    <li><strong>Launch the Jailbreak App</strong><br />
+      When the jailbreak launcher appears (called “WinterBreak”), tap on its icon (not the toggle switch).<br />
+      Wait until you see a small message saying “Please install the hot fix.” The “wait” message will remain but you can proceed.<br />
+      <img src="/path/to/placeholder-winterbreak-app.png" alt="WinterBreak app screen" />
+    </li>
+
+    <li><strong>Download and Apply the Hot Fix</strong><br />
+      Connect your Kindle back to your computer.<br />
+      Download the hot fix file here:<br />
+      <a href="https://github.com/KindleModding/Hotfix" target="_blank" rel="noopener noreferrer">Github with Hotfix file</a><br />
+      Copy this file to the Kindle root directory.<br />
+      Safely eject and unplug your Kindle.<br />
+      On Kindle, go to <em>Settings &gt; Device Options &gt; Software Updates</em> and select “Update”.<br />
+      Wait as your Kindle installs the hot fix and reboots.<br />
+      After reboot, you’ll see a book titled “Run Hot Fix”. Open it once to complete installation.<br />
+      This only needs to be done once.
+    </li>
+
+    <li><strong>Congratulations! Your Kindle Is Jailbroken.</strong></li>
+
+    <li><strong>Install KUAL Launcher</strong><br />
+      This launcher lets you run apps like KOReader and scripts.<br />
+      Download KUAL and  MobileRead Package Installer (MR Package Installer) here:<br />
+      <a href="https://www.mobileread.com/forums/showthread.php?t=225030" target="_blank" rel="noopener noreferrer">KUAl and MR Package Installer Files (on MobileRead forum)</a><br />
+      Extract MR Package Installer zip, then copy both the <code>extensions</code> and <code>mrpackages</code> folders to your Kindle root directory.<br />
+      Extract KUAL, then copy the <code>update_dual_hotfix</code> folder to the Kindle root.<br />
+      Safely eject and unplug Kindle.<br />
+      Go to <em>Settings &gt; Device Options &gt; Software Updates</em> and update again.<br />
+      After reboot, a new book titled “KUAL” appears — open it to access jailbreak apps.
+    </li>
+
+    <li><strong>Prevent Automatic Firmware Updates</strong><br />
+      To keep your jailbreak safe, prevent OTA updates:<br />
+      - For firmware 5.11 or higher:<br />
+      Download the “renameotabin” folder here:<br />
+      <a href="https://www.mobileread.com/forums/showpost.php?p=4076733&postcount=25" target="_blank" rel="noopener noreferrer">Rename OTA Binaries File (on MobileRead Forum)</a><br />
+      Extract and copy the <code>renameotabin</code> folder into the <code>extensions</code> folder on your Kindle.<br />
+      - For firmware 5.10 or below:<br />
+      Create a folder called <code>update.bin.tmp.partial</code> in your Kindle root directory.<br />
+      Right-click it, open Properties, and check “Read-only”.<br />
+      Open KUAL, select “Rename OTA Binaries”, click “Rename” — your Kindle will restart.
+    </li>
+
+    <li><strong>Install KOReader</strong><br />
+      KOReader is a powerful reading app with many features.<br />
+      Download it here:<br />
+      <a href="https://build.koreader.rocks/download/nightly/" target="_blank" rel="noopener noreferrer">KOReader File</a><br />
+      Download the appropriate <code>koreader-kindle-hf.zip</code> file.<br />
+      Extract it. Now, inside the KOReader folder you’ll find two more folders: <code>koreader</code> and <code>extensions</code>. <br /> 
+      Copy the <code>koreader</code> folder you found INSIDE the extracted <code>extensions</code> folder into your Kindle’s <code>extensions</code> folder.<br />
+      Then copy the other <code>koreader</code> folder that was inside the downloaded file and move it directly into your Kindle root.<br />
+      Safely eject your Kindle.<br />
+      Open KUAL launcher on your Kindle, and you will see KOReader.<br />
+      Select “Start KOReader” to launch it.<br />
+      To return to Kindle’s normal interface, you can just exit KOReader. Warning: to manually transfer data from a computer you will need to exit KUAL and KOReader back into the normal Kindle homepage. 
     </li>
   </ol>
 
-  <h3>Safety Tips</h3>
+  <h3>I'm Confused, Can I See a Video?</h3>
   <ul>
-    <li>Backup your important files before starting</li>
-    <li>Do not disconnect or power off your Kindle during jailbreak</li>
-    <li>Use only verified jailbreak files and sources</li>
-    <li>Keep in mind that Amazon firmware updates can remove the jailbreak</li>
+    <li><a href="https://www.youtube.com/watch?v=IRW_EYDcW1o&pp=0gcJCdgAo7VqN5tD" target="_blank" rel="noopener noreferrer">Complete Jailbreak Guide (NOT the KOReader section, for that use the next video)</a></li>
+    <li><a href="https://www.youtube.com/watch?v=OOFDJh7CfaE" target="_blank" rel="noopener noreferrer">KOReader Installation Video</a></li>
   </ul>
 
-  <h3>Further Resources</h3>
-  <ul>
-    <li><a href="https://www.mobileread.com/forums/forumdisplay.php?f=142" target="_blank" rel="noopener noreferrer">MobileRead Kindle Jailbreak Forum</a></li>
-    <li><a href="https://www.youtube.com/playlist?list=PLkindleyouneed" target="_blank" rel="noopener noreferrer">YouTube Tutorials Playlist</a></li>
-  </ul>
+  <h3>KOReader Plugin to Simplify Book Navigation</h3>
+  <p>This plugin merges all your books into a single view, making navigation easier.</p>
+  <ol>
+    <li>Download the latest release of the plugin here:<br />
+      <a href="https://github.com/peterstamps/All_eBooks_in_single_flat_view_on_KOreader" target="_blank" rel="noopener noreferrer">All eBooks in Single Flat View Plugin File</a>
+    </li>
+    <li>Extract the downloaded file. You should get a folder named <code>AllMyBooks.plugin</code> (not zipped).</li>
+    <li>Connect your Kindle and open its <code>extensions</code> folder inside KOReader.<br />
+      Copy the <code>AllMyBooks.plugin</code> folder into this <code>extensions</code> folder.
+    </li>
+  </ol>
+ <br> 
+  <h2>Great Job!</h2>
+
 </SplitLayout>
