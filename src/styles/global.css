@@ -7,8 +7,8 @@
   box-sizing: border-box;
 }
 ::selection {
-  background-color: #ffcc00; /* Your highlight color */
-  color: #000000;            /* Optional: text color on highlight */
+  background-color: #ffcc00;
+  color: #000000;
 }
 body {
   display: flex;
@@ -18,11 +18,9 @@ body {
   color: black;
   overflow: hidden;
 }
-
-/* Hamburger menu button - hidden on desktop, styled like nav links */
 #menu-toggle,
 .menu-toggle {
-  display: none; /* hidden on desktop */
+  display: none;
   cursor: pointer;
   color: black;
   font-size: 1.25rem;
@@ -39,11 +37,9 @@ body {
 .menu-toggle:hover {
   background-color: #ffda006b;
 }
-
 .bottom-nav {
   display: none;
 }
-
 .left-half {
   width: 50%;
   background-color: #f3f3eb;
@@ -82,7 +78,6 @@ body {
   image-rendering: pixelated;
   letter-spacing: 0.02em;
 }
-/* Grainy noise overlay */
 .left-half a::after {
   content: "";
   position: absolute;
@@ -96,16 +91,13 @@ body {
   z-index: 2;
   border-radius: 55px;
 }
-/* Show grain overlay on hover */
 .left-half a:hover::after {
   opacity: 0.15;
   animation-play-state: running;
 }
-/* Flicker opacity on text */
 .left-half a:hover span {
   animation: eink-opacity-flicker 1.2s ease-in-out;
 }
-/* Flicker opacity keyframes */
 @keyframes eink-opacity-flicker {
   0%, 100% {opacity: 1;}
   20% {opacity: 0.3;}
@@ -113,7 +105,6 @@ body {
   60% {opacity: 0.4;}
   80% {opacity: 0.85;}
 }
-/* Grain overlay flicker animation */
 @keyframes grainy-flicker {
   0%, 100% {background-position: 0 0;}
   50% {background-position: 5px 5px;}
@@ -121,14 +112,13 @@ body {
 #right-half {
   position: relative;
   width: 50%;
-  padding: 5rem 4rem 5rem; /* bottom padding reduced, will add more on mobile */
+  padding: 5rem 4rem 5rem;
   overflow-y: auto;
   font-size: 1rem;
   line-height: 1.8;
   border: 1rem solid #e9e9db;
   text-decoration: none;
 }
-/* Dog-ear corner fixed inside right-half */
 .dog-ear {
   width: 0;
   height: 0;
@@ -149,7 +139,6 @@ h2 {
   font-family: 'Libre Baskerville', serif;
   line-height: 1.5;
 }
-
 h3 {
   margin-block-start: 2rem;
 }
@@ -164,8 +153,7 @@ h3 {
   height: 5rem;
   z-index: 10;
 }
-/* Borders */
-#top, #bottom, #left, #right, #middle {
+#top, #bottom, #left, #right {
   position: fixed;
   background-color: #ffffff30;
   z-index: 5;
@@ -199,24 +187,23 @@ h3 {
   width: 2px;
   transform: translateX(-1px);
 }
-/* External links */
 a[href^="http://"],
 a[href^="https://"] {
   color: black !important;
-  text-decoration: none; /* remove underline */
-  background-color: #ffda006b; /* bright yellow highlight */
+  text-decoration: none;
+  background-color: #ffda006b;
   transition: background-color 0.3s ease, color 0.3s ease;
-  padding: 3px; /* small horizontal padding to look like highlight */
+  padding: 3px;
 }
 a[href^="http://"]:hover,
 a[href^="https://"]:hover {
-  cursor: pointer; /* pointer on hover */
-  background-color: #fff100; /* slightly brighter yellow on hover */
+  cursor: pointer;
+  background-color: #fff100;
   color: black !important;
   text-decoration: underline;
 }
+
 /* Responsive */
-/* Desktop and tablet */
 @media (max-width: 1024px) {
   #right-half {
     padding: 3rem 2rem;
@@ -225,23 +212,18 @@ a[href^="https://"]:hover {
     max-width: 100%;
   }
 }
-/* Mobile */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
   }
-
-  /* Show toggle button at bottom center */
   #menu-toggle {
     display: inline-flex;
     position: fixed;
-    bottom: 3.75rem; /* above bottom nav */
+    bottom: 3.75rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 101;
   }
-
-  /* Adjust left nav to slide in */
   .left-half {
     position: fixed;
     top: 0;
@@ -263,21 +245,15 @@ a[href^="https://"]:hover {
   .left-half.open {
     transform: translateX(0);
   }
-
-  /* Right half full width and padding for bottom nav */
   #right-half {
     width: 100%;
-    padding: 3rem 1.5rem 7rem; /* add bottom padding for nav & toggle */
+    padding: 3rem 1.5rem 7rem;
     border: none;
     font-size: 1rem;
   }
-
-  /* Dog ear visible on mobile */
   .dog-ear {
     display: block;
   }
-
-  /* Bottom nav visible at bottom */
   .bottom-nav {
     display: flex;
     position: fixed;
@@ -294,8 +270,6 @@ a[href^="https://"]:hover {
     gap: 1rem;
     overflow-x: auto;
   }
-
-  /* Nav links smaller font and fit better */
   .bottom-nav a {
     color: black;
     font-size: 1rem;
@@ -312,8 +286,6 @@ a[href^="https://"]:hover {
   .bottom-nav a:hover {
     background-color: #ffda006b;
   }
-
-  /* Mobile image adjustments */
   #right-half img {
     float: none;
     max-width: 100%;
@@ -323,21 +295,19 @@ a[href^="https://"]:hover {
   }
 }
 
-/* ====== New styles for images inside #right-half ====== */
+/* New image styles */
 #right-half img {
   display: block;
   max-width: 100%;
   height: auto;
   margin: 1.5rem 0;
   margin-left: 2rem;
-  border: none; /* removed white line border */
+  border: none;
   border-radius: 0.75rem;
   object-fit: contain;
   float: right;
   shape-outside: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
-
-/* Clear float on paragraphs, lists immediately after images */
 #right-half img + p,
 #right-half img + ul,
 #right-half img + ol {
